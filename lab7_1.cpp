@@ -1,41 +1,60 @@
-#include<iostream>
-#include<string>
+#include <iostream>
+#include <string>
 
 using namespace std;
 
-string func1(string x){
+string func1(string x)
+{
 	int i = 0, L = x.size();
 	string y = "";
-	while(i < L){
-		y += x[L-i-1];
+	while (i < L)
+	{
+		y += x[L - i - 1];
 		i++;
 	}
 	return y;
 }
 
-string func2(string x){
+string func2(string x)
+{
 	int i = 0, L = x.size();
 	string y = "";
-	while(i < L){
+	while (i < L)
+	{
 		y += toupper(x[i]);
 		i++;
 	}
-	return y;	
+	return y;
 }
 
-string func3(string x){
+string func3(string x)
+{
 	int i = 0, L = x.size();
 	string y = "";
-	while(i < L){
+	while (i < L)
+	{
 		y += tolower(x[i]);
 		i++;
 	}
-	return y;	
+	return y;
 }
 
-int main(){
-    cout >> "Input text: "
-    cout >> "Reversed text: "
-    cout >> "Palindrome: "
-    return 0;
+int main()
+{
+	string text;
+	cout << "Input text: ";
+	cin >> text;
+
+	cout << "Reversed text: " << func1(text) << "\n";
+
+	if (func2(text) == func2(func1(text)))
+	{
+		cout << "Palindrome: Yes";
+	}
+	else
+	{
+		cout << "Palindrome: No";
+	}
+
+	return 0;
 }
